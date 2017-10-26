@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Are You Color Blind?</title>
+
+<style>
+body {
+background-image: url("pencil.jpg");
+font-family: Helvetica;
+}
+
+#main {
+width: 60%;
+border: 1px black;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+
+label {
+display: block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+
+img {
+    max-width: 200px;
+    height: auto;
+}
+
+
+</style>
+</head>
+<body>
+<div id="main">
+<center><h1>Are You Color Blind?</h1></center>
+
+<form  id="form1">
+<h2>What number is shown?</h2>
+<img src="5.png" />
+<label><input type="radio" name="fiver" id="zero" value="red" />0</label>
+<label><input type="radio" name="fiver" id="thirty" value="red" />33</label>
+<label><input type="radio" name="fiver" id="sixx" value="red" />6</label>
+<label><input type="radio" name="fiver" id="fivee" value="perfect" />5</label><br/>
+
+<h2>What number is shown?</h2>
+<img src="6.png" />
+<label><input type="radio" name="sixb" id="nine" value="blue" />9</label>
+<label><input type="radio" name="sixb" id="fifty" value="blue" />52</label>
+<label><input type="radio" name="sixb" id="sixxx" value="perfect" />6</label>
+<label><input type="radio" name="sixb" id="twentyy" value="blue" />20</label><br/>
+
+<h2>How many colors are in the umbrella? (not including values of a color)</h2>
+<img src="umbrella.jpg" /><br/>
+<label><input type="radio" name="umbrella" id="two" value="blue" />2</label>
+<label><input type="radio" name="umbrella" id="three" value="red" />3</label>
+<label><input type="radio" name="umbrella" id="four" value="perfect" />4</label>
+
+<h2>What number is shown?</h2>
+<img src="26.png" />
+<label><input type="radio" name="twentyr" id="twentyr_string" value="red" />2</label>
+<label><input type="radio" name="twentyr" id="twentyr_join" value="perfect" />26</label>
+<label><input type="radio" name="twentyr" id="twentyr_info" value="red" />45</label>
+<label><input type="radio" name="twentyr" id="twentyr_condition" value="red" />6</label><br/>
+
+<h2>What number is shown?</h2>
+<img src="74.png" />
+<label><input type="radio" name="seventyr" id="seventyr_string" value="perfect" />74</label>
+<label><input type="radio" name="seventyr" id="seventyr_join" value="red" />8</label>
+<label><input type="radio" name="seventyr" id="seventyr_info" value="red" />4</label>
+<label><input type="radio" name="seventyr" id="seventyr_condition" value="red" />3</label><br/>
+
+<h2>Which best describes the colors of the flowers?</h2>
+<img src="pug.jpg" /><br/>
+<label><input type="radio" name="pug" id="pug_string" value="red" />blue, yellow and grey</label>
+<label><input type="radio" name="pug" id="pug_join" value="blue" />white and red</label>
+<label><input type="radio" name="pug" id="pug_info" value="perfect" />yellow, red and purple</label>
+<label><input type="radio" name="pug" id="pug_condition" value="0" />blue and white</label><br/>
+
+<h2>What number is shown?</h2>
+<img src="7.png" />
+<label><input type="radio" name="sevenb" id="sevenb_string" value="0" />2</label>
+<label><input type="radio" name="sevenb" id="sevenb_join" value="perfect" />7</label>
+<label><input type="radio" name="sevenb" id="sevenb_info" value="blue" />69</label>
+<label><input type="radio" name="sevenb" id="sevenb_condition" value="blue" />74</label><br/>
+
+<h2>What number is shown?</h2>
+<img src="4.png" />
+<label><input type="radio" name="fourb" id="fourb_string" value="blue" />6</label>
+<label><input type="radio" name="fourb" id="fourb_join" value="blue" />95</label>
+<label><input type="radio" name="fourb" id="fourb_info" value="blue" />7</label>
+<label><input type="radio" name="fourb" id="fourb_condition" value="perfect" />4</label><br/>
+
+<h2>Do you have a hard time distinguishing between a ripe and unripe fruit?</h2>
+<label><input type="radio" name="fruit" id="fruit_string" value="red" />yes</label>
+<label><input type="radio" name="fruit" id="fruit_join" value="perfect" />no</label><br/>
+
+<h2>What number is shown?</h2>
+<img src="12.png" />
+<label><input type="radio" name="twelveb" id="twelveb_string" value="blue" />2</label>
+<label><input type="radio" name="twelveb" id="twelveb_join" value="blue" />3</label>
+<label><input type="radio" name="twelveb" id="twelveb_info" value="perfect" />12</label>
+<label><input type="radio" name="twelveb" id="twelveb_condition" value="blue" />1</label><br/>
+
+<h2>What number is shown?</h2>
+<img src="97.png" />
+<label><input type="radio" name="ninetyr" id="ninetyr_string" value="red" />93</label>
+<label><input type="radio" name="ninetyr" id="ninetyr_join" value="perfect" />97</label>
+<label><input type="radio" name="ninetyr" id="ninetyr_info" value="red" />16</label>
+<label><input type="radio" name="ninetyr" id="ninetyr_condition" value="red" />5</label><br/>
+
+<button type="submit" value="Submit">Submit</button>
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+<p id="answer3"></p>
+<p id="answer4"></p>
+
+</div>
+<script>
+ 
+    
+	document.getElementById("form1").onsubmit=function() {
+	   
+	 fiver = document.querySelector('input[name = "fiver"]:checked').value;
+	   
+	  
+	 sixb = document.querySelector('input[name = "sixb"]:checked').value;
+	   
+	 umbrella = document.querySelector('input[name = "umbrella"]:checked').value;
+	 twentyr = document.querySelector('input[name = "twentyr"]:checked').value;
+	 seventyr = document.querySelector('input[name = "seventyr"]:checked').value;
+	 pug = document.querySelector('input[name = "pug"]:checked').value;
+	 sevenb = document.querySelector('input[name = "sevenb"]:checked').value;
+     fourb = document.querySelector('input[name = "fourb"]:checked').value;
+     fruit = document.querySelector('input[name = "fruit"]:checked').value;
+     twelveb = document.querySelector('input[name = "twelveb"]:checked').value;
+     ninetyr = document.querySelector('input[name = "ninetyr"]:checked').value;
+	    
+	  // initialize score variables 
+	  red = 0;
+	  blue = 0;
+	  perfect = 0;
+	  
+	  //function to calculate score for each question
+	  function eachscore(x){
+	  if(x == "red") { red = red + 1}
+	  if(x == "blue") { blue = blue + 1}
+	  if(x == "perfect") { perfect = perfect + 1}
+	  }
+	  // for the above function, you could also change the 1 to a variable so you could give more points for certain questions
+	  
+	  //call function for each question
+	  eachscore(eval("fiver"));
+	  eachscore(eval("sixb"));
+	  eachscore(eval("umbrella"));
+	  eachscore(eval("twentyr"));
+      eachscore(eval("seventyr"));
+      eachscore(eval("pug"));
+      eachscore(eval("sevenb"));
+      eachscore(eval("fourb"));
+      eachscore(eval("fruit"));
+      eachscore(eval("twelveb"));
+      eachscore(eval("ninetyr"));
+	  
+	  
+	  
+	  all = [red, blue, perfect];
+	  
+	//get the max score  in the array
+	maxscore = Math.max.apply(Math,all);
+	
+    //figure out which score is the max score by identifying its index number
+	for(i=0; i<all.length; i++) {
+	if(all[i]==maxscore) {
+	highest = i;
+	}
+	}
+	
+
+// object holding scores and feedback	
+scores = [{index:0, feedback: "You confuse reds and greens."},
+{index:1, feedback: "You confuse blues and yellows."},
+{index:2, feedback: "You are not color blind."}];
+
+
+//loop to match index to score and reply with feedback
+for(i=0;i<scores.length; i++) {
+if(highest == scores[i].index) {
+document.getElementById("answer4").innerHTML = scores[i].feedback;
+}
+}
+
+	   
+
+
+
+		   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	
+
+</script>
+
+
+
+</body>
+</html>
